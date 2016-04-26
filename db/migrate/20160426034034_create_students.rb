@@ -8,7 +8,7 @@ class CreateStudents < ActiveRecord::Migration
       t.integer :contact
       t.text  :interest
       t.date  :dob
-      t.attachment :picture
+      t.binary :picture
       t.timestamps null: false
     end
   end
