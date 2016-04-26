@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Share Knowledge</title>
+</head>
+<body>
+<!--<h1 align="middle"><a href="index"> << </a> </h1>-->
+<hr/>
+<div>
+  <h2>Add a Student</h2>
+  <br>
+  <div>
+    <%= form_for(@student) do |c| %>
+          Name:    <%= c.text_field :name, :required=>true%><br><br>
+          Address: <%= c.text_field :address, :required=>true%><br><br>
+          DOB: <%= c.date_field :dob, :required=>true%><br><br>
+          Gender:  <%= c.select :gender , [:MALE, :FEMALE] %><br><br>
+          Contact: <%= c.text_field :contact,:required=>true%><br><br>
+          Interest:  <%= c.text_field :interest, :required=>true%><br><br>
+          Guardian: <%= c.text_field :guardian%><br><br>
+          Upload photo: <br><br><%= c.file_field :picture, accept: 'image/png,image/jpeg'%><br><br>
+        <div class="submit">
+          <%= c.submit "Create" %>
+        </div>
+    <%end%>
+  </div>
+</div>
+</body>
+</html>
+

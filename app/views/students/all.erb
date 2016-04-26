@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Share Knowledge</title>
+  <div class="header">
+    <h1>Share knowledge </h1>
+    <%= link_to "Add  Student", "students/new", :class=>"addStudent" %>
+  </div>
+
+  <% @students.each do |user| %>
+      <div class="student">
+        <div class="student_pic">
+          <%= image_tag "sample.png" %>
+        </div>
+        <div class="student_details">
+          Name: <%= user.name %><br><br>
+          Address: <%= user.address %><br><br>
+          Contact No. : <%= user.contact %><br><br>
+          DOB: <%= user.dob %><br><br>
+          interset: <%= user.interest %><br><br>
+            <a class="know_more" href="">Know More..</a>
+        </div>
+      </div>
+  <% end %>
+
+</head>
+<body>
+</body>
+</html>
