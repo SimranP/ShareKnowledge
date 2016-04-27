@@ -5,6 +5,7 @@
   <div class="header">
     <h1>Share knowledge </h1>
     <%= link_to "Add  Student", "students/new", :class=>"addStudent" %>
+    <%= link_to "Sign in with Facebook", "auth/facebook", :class=>"addStudent" %>
   </div>
 
   <% @students.each do |user| %>
@@ -22,7 +23,6 @@
         </div>
       </div>
   <% end %>
-
 </head>
 <body>
 </body>

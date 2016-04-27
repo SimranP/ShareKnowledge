@@ -9,7 +9,6 @@ class StudentsController < ApplicationController
 
   def create
     @student = Student.new(student_params)
-    p {@student.inspect?}
     if @student.save
       redirect_to ""
     else
