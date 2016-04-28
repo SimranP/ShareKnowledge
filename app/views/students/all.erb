@@ -11,15 +11,14 @@
   <% @students.each do |user| %>
       <div class="student">
         <div class="student_pic">
-          <%= image_tag "sample.png" %>
+          <%= image_tag user.picture %>
         </div>
         <div class="student_details">
           Name: <%= user.name %><br><br>
           Address: <%= user.address %><br><br>
-          Contact No. : <%= user.contact %><br><br>
-          DOB: <%= user.dob %><br><br>
           interset: <%= user.interest %><br><br>
-            <a class="know_more" href="">Know More..</a>
+          <a class="know_more" href="">Know More..</a>
+          <hr>
         </div>
       </div>
   <% end %>

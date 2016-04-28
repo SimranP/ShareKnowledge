@@ -11,17 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160427034211) do
+ActiveRecord::Schema.define(version: 20160428064846) do
 
   create_table "students", force: :cascade do |t|
     t.text     "name"
     t.text     "address"
     t.text     "gender"
     t.text     "guardian"
-    t.integer  "contact"
+    t.float    "contact"
     t.text     "interest"
     t.date     "dob"
-    t.binary   "picture"
+    t.text     "picture"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
