@@ -5,10 +5,10 @@ class CreateStudents < ActiveRecord::Migration
       t.text :address
       t.text :gender
       t.text :guardian
-      t.integer :contact
+      t.float :contact
       t.text  :interest
       t.date  :dob
-      t.binary :picture
+      t.text :picture
       t.timestamps null: false
     end
   end
