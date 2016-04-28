@@ -4,7 +4,12 @@ class StudentsController < ApplicationController
   end
 
   def new
-    @student = Student.new
+    p current_user  ,"============================"
+    if current_user == nil
+      redirect_to "/auth/facebook"
+    else
+     @student = Student.new
+    end
   end
 
   def create

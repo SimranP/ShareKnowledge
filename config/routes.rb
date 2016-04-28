@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get "" => "students#all"
   get "students/new" =>"students#new"
   get "auth/:provider/callback" => "sessions#create"
-  # get "auth/failure" => "students#all"
+  get "auth/failure" => "students#all"
   get "logout", to: "sessions#destroy"
   resources :students
   resource :sessions

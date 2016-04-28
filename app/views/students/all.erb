@@ -2,28 +2,41 @@
 <html>
 <head>
   <title>Share Knowledge</title>
-  <div class="header">
-    <h1>Share knowledge </h1>
-    <%= link_to "Add  Student", "students/new", :class=>"addStudent" %>
-    <%= link_to "Sign in with Facebook", "auth/facebook", :class=>"addStudent" %>
-  </div>
-
-  <% @students.each do |user| %>
-      <div class="student">
-        <div class="student_pic">
-          <%= image_tag "sample.png" %>
-        </div>
-        <div class="student_details">
-          Name: <%= user.name %><br><br>
-          Address: <%= user.address %><br><br>
-          Contact No. : <%= user.contact %><br><br>
-          DOB: <%= user.dob %><br><br>
-          interset: <%= user.interest %><br><br>
-            <a class="know_more" href="">Know More..</a>
+</head>
+<div class="header">
+  <h1>Share knowledge </h1>
+  <% if current_user != nil %>
+      <div class="loggedinUser">
+        <%= current_user.name %>
+        <div class="button"><%= image_tag current_user.image%></div>
+        <div class="dropdown">
+          <%= link_to "Logout" ,"logout"%>
         </div>
       </div>
   <% end %>
-</head>
+  <% if current_user == nil %>
+      <%= link_to "Sign In With Facebook", "auth/facebook", :class => "addStudent" %>
+  <% end %>
+  <%= link_to "Add  Student", "students/new", :class => "addStudent" %>
+</div>
+
+
+
+<% @students.each do |user| %>
+    <div class="student">
+      <div class="student_pic">
+        <%= image_tag "sample.png" %>
+      </div>
+      <div class="student_details">
+        Name: <%= user.name %><br><br>
+        Address: <%= user.address %><br><br>
+        Contact No. : <%= user.contact %><br><br>
+        DOB: <%= user.dob %><br><br>
+        interset: <%= user.interest %><br><br>
+        <a class="know_more" href="">Know More..</a>
+      </div>
+    </div>
+<% end %>
 <body>
 </body>
 </html>
