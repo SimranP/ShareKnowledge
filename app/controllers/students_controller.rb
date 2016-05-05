@@ -26,7 +26,7 @@ class StudentsController < ApplicationController
     copy_image student_params
     @student = Student.new(assign_details)
     if @student.save
-      redirect_to ""
+      redirect_to "", :notice=> "Student details has been sent for verification."
     else
       render "new"
     end

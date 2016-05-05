@@ -82,3 +82,28 @@ form,h2 {
   margin-left: 30%;
   width: 70%;
 }
+
+.alert {
+  padding: 20px;
+  background-color: #00cc00; /* Green */
+  color: white;
+  width: 40%;
+  opacity: 0.4;
+  margin-bottom: 15px;
+  font-size: 25px;
+}
+
+/* The close button */
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 32px;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+.closebtn:hover {
+  color: black;
+}

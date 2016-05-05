@@ -2,35 +2,21 @@
 <html>
 <head>
   <title>Share Knowledge</title>
-<<<<<<< HEAD
 </head>
 <div class="header">
   <h1>Share knowledge </h1>
+  <% if notice %>
+      <div class="alert">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        <%= notice %>
+      </div>
+  <% end %>
   <% if current_user != nil %>
       <div class="loggedinUser">
         <%= current_user.name %>
-        <div class="button"><%= image_tag current_user.image%></div>
+        <div class="button"><%= image_tag current_user.image %></div>
         <div class="dropdown">
-          <%= link_to "Logout" ,"logout"%>
-=======
-  <div class="header">
-    <h1>Share knowledge </h1>
-    <%= link_to "Add  Student", "students/new", :class=>"addStudent" %>
-    <%= link_to "Sign in with Facebook", "auth/facebook", :class=>"addStudent" %>
-  </div>
-
-  <% @students.each do |user| %>
-      <div class="student">
-        <div class="student_pic">
-          <%= image_tag user.picture %>
-        </div>
-        <div class="student_details">
-          Name: <%= user.name %><br><br>
-          Address: <%= user.address %><br><br>
-          interset: <%= user.interest %><br><br>
-          <a class="know_more" href="">Know More..</a>
-          <hr>
->>>>>>> df5f5d2e8e67a049e00062994caba8d55a0a3b1c
+          <%= link_to "Logout", "logout" %>
         </div>
       </div>
   <% end %>
@@ -40,23 +26,21 @@
   <%= link_to "Add  Student", "students/new", :class => "addStudent" %>
 </div>
 
-
-
 <% @students.each do |user| %>
     <div class="student">
       <div class="student_pic">
-        <%= image_tag "sample.png" %>
+        <%= image_tag user.picture %>
       </div>
       <div class="student_details">
         Name: <%= user.name %><br><br>
         Address: <%= user.address %><br><br>
-        Contact No. : <%= user.contact %><br><br>
-        DOB: <%= user.dob %><br><br>
         interset: <%= user.interest %><br><br>
         <a class="know_more" href="">Know More..</a>
+        <hr>
       </div>
     </div>
 <% end %>
+</div>
 <body>
 </body>
 </html>
